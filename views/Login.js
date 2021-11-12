@@ -1,4 +1,4 @@
-import AsyncStorage from "@react-native-community/async-storage";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import React, { useState, useEffect, useRef } from "react";
 import { KeyboardAvoidingView, Platform, Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 import {css} from '../assets/css/Css';
@@ -13,10 +13,10 @@ export default function Login() {
     //Envio do formulario
     async function sendForm()
     {
-        let response=await fetch('http://192.168.1.108:3000/login',{
+        let response=await fetch('http://192.168.1.105:19000/login',{
             method: 'POST',
             headers: {
-                Accept: 'application/json',
+                Accept: 'application/json', 
                 'Content-Type': 'application/json'
         },
             body: JSON.stringify({
